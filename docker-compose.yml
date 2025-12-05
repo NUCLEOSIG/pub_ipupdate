@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ip-updater:
+    # Construye la imagen a partir del Dockerfile en el directorio actual.
+    build: .
+    # Asigna un nombre predecible al contenedor.
+    container_name: ip-updater
+    env_file: .env
+    # Asegura que el contenedor se reinicie automáticamente si se detiene o en el reinicio del sistema.
+    restart: unless-stopped
